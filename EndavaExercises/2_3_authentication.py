@@ -18,10 +18,18 @@
 # log out.
 
 
-print('Please enter Name, Surname and Age: ')
-name = input('Name: ')
-surname = input('Surname: ')
+print('Please fill registration form. Enter Name, Surname and Age: ')
+name, surname = (input('Name: '), input('Surname: '))
 age = int(input('Age: '))
 
-print('Person {0} {1} is {2} years old.'.format(name, surname, age))
-print('Person {} {} is {} years old.'.format(name, surname, age))
+while True:
+    print('Please login using valid credentials: ')
+    login_name, login_surname = (input('Name: '), input('Surname: '))
+    if login_name != name or login_surname != surname:
+        print('You have entered invalid username or password!')
+    elif login_name == name or login_surname == surname:
+        print('Person {0} {1} is {2} years old.'.format(name, surname, age))
+        print('Person {} {} is {} years old.'.format(name, surname, age))
+        logout = input('Press L for logout')
+        if logout == 'L':
+            break
