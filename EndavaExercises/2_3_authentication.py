@@ -27,9 +27,9 @@ while True:
     login_name, login_surname = (input('Name: '), input('Surname: '))
     if login_name != name or login_surname != surname:
         print('You have entered invalid username or password!')
-    elif login_name == name or login_surname == surname:
+    else:
         print('Person {0} {1} is {2} years old.'.format(name, surname, age))
         print('Person {} {} is {} years old.'.format(name, surname, age))
-        logout = input('Press L for logout')
-        if logout == 'L':
+        logout = input('Type credentials again or \'logout\' for logout')
+        if logout.lower() == 'logout':
             break
