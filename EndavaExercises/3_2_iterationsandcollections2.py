@@ -22,7 +22,8 @@ person = []
 while True:
     reg_or_login = input('Do you want to register or login?\n'
                          'For registration, enter \'register\'.\n'
-                         'For login, enter \'login\': ')
+                         'For login, enter \'login\'.\n'
+                         'Type \'exit\' to exit program: ')
 
     if reg_or_login.lower() == 'register':
         name, surname, age = input('Input name: '), input('Input surname: '), input('Input age: ')
@@ -47,7 +48,10 @@ while True:
                     break
             else:
                 print('You have entered invalid username or password!')
+            break
+
+    elif reg_or_login.lower() == 'exit':
+        exit()
 
     else:
         print('You did not entered correct option!')
-        break
